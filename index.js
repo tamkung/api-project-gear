@@ -23,6 +23,10 @@ admin.initializeApp({
     databaseURL: "https://project-ae784-default-rtdb.asia-southeast1.firebasedatabase.app"
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
 app.delete('/users/:id', (req, res) => {
     const uid = req.params.id;
     admin.auth().deleteUser(uid)
